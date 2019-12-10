@@ -234,6 +234,8 @@ func (comp *IntComputer) readValueFromMemory(position, mode int) int {
 		panic(fmt.Errorf("Unknown memory access mode: %d", mode))
 	}
 
+	dumpIfDebug("Read from memory", fmt.Sprintf("addr: %d, mode: %d", address, mode))
+
 	if address < 0 {
 		panic("Can't access a negative memory address")
 	}
